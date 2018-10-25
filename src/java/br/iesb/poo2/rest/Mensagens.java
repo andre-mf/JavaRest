@@ -6,6 +6,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 @Path("msg")
@@ -15,8 +16,8 @@ public class Mensagens {
     @Path("teste01")
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String doTeste01() {
-        return "Resposta em txt RESTFUll, O tempo agora é "+ tempo;
+    public String doTeste01(@QueryParam("rest") int a, @QueryParam("xp") int b) {
+        return "Resposta em txt RESTFUll, " + a + " O tempo agora é "+ tempo + "b = " + b;
     }
     
     @Path("teste02")
