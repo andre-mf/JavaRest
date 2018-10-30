@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>
-            <form action="simulador" method="post">
-                <label>Valor</label>
-                
-            </form>
-        </div>
-    </body>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <form action="api/msg/teste01" method="get">
+            <label>Rest</label>
+            <input type="text" name="rest">
+            <label>XP</label>
+            <input type="text" name="xp" id="xp">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    <div id="mensagem">
+    </div>
+    <script>
+        $(function () {
+            $("#xp").change( function() {
+  alert('this.value');
+});
+        }
+    </script>
+
+</body>
+
 </html>
