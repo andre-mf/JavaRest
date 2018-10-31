@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Simulador de Empréstimo Pessoal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row" style="margin-top: 10px">
+        <div class="col-md-6"><img src="img/emprestimo.png" class="img img-responsive img-thumbnail"></div>
+        <div class="col-md-6 align-items-center">
+            <form>
+                <div class="form-group">
+                    <label for="valor">Valor do Empréstimo</label>
+                    <input type="text" class="form-control" id="valor" aria-describedby="emailHelp" placeholder="R$">
+                </div>
+                <div class="form-group">
+                    <label for="parcelas" id="qtparcelas">Quantidade de parcelas</label>
+                    <div class="form-row align-items-center">
+                        <div class="col-auto my-1">
+                            <select class="custom-select mr-sm-2" id="parcelas" name="parcelas">
+                                <option selected>Selecione</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" id="calcular">Calcular</button>
+                    </div>
+            </form>
+        </div>
+        <div id="mensagem"></div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(function () {
+        $('#calcular').click(function () {
+            $('#mensagem').load('/JavaRest/api/msg/teste05?parcelas=' + $('#parcelas').val() + '&valor=' + $('#valor').val());
+        })
+    })
+</script>
+</body>
+
+</html>

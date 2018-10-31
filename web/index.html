@@ -20,12 +20,21 @@
     </div>
     <div id="mensagem">
     </div>
+
     <script>
+
         $(function () {
-            $("#xp").change( function() {
-  alert('this.value');
-});
-        }
+            $('#xp').change(function () {
+                alert("mudou")
+            })
+        });
+
+        $('#xp').change(function () {
+            $('#mensagem').load('api/msg/teste01');
+
+        });
+
+
     </script>
 
 </body>
